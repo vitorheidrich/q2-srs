@@ -8,13 +8,11 @@
 
 from setuptools import setup, find_packages
 
-import versioneer
-
 # Setup based on q2-emperor setup; inspired by q2-breakaway and q2-perc-normalize setups
 
 setup(
     name="SRS",
-    version=versioneer.get_version(),
+    version="0.1.0",
     packages=find_packages(),
     author="Vitor Heidrich & Lukas Beule",
     description="Scaling with ranked subsampling (SRS) for the normalization of ecological count data",
