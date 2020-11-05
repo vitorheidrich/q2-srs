@@ -12,7 +12,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="SRS",
-    version="0.1.0",
+    version="2020.8.0",
     packages=find_packages(),
     author="Vitor Heidrich & Lukas Beule",
     description="Scaling with ranked subsampling (SRS) for the normalization of ecological count data",
