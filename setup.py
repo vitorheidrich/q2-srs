@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------------
+# Copyright (c) 2016-2018, QIIME 2 development team.
+#
+# Distributed under the terms of the Modified BSD License.
+#
+# The full license is in the file LICENSE, distributed with this software.
+# ----------------------------------------------------------------------------
+
+from setuptools import setup, find_packages
+
+import versioneer
+
+# Setup based on q2-emperor setup; inspired by q2-breakaway and q2-perc-normalize setups
+
+setup(
+    name="SRS",
+    version=versioneer.get_version(),
+    packages=find_packages(),
+    author="Vitor Heidrich & Lukas Beule",
+    description="Scaling with ranked subsampling (SRS) for the normalization of ecological count data",
+    scripts='q2_SRS/assets/SRS.R',
+    license='BSD-3-Clause',
+    url="https://qiime2.org",
+    entry_points={
+        'qiime2.plugins':
+        ['q2-SRS=q2_SRS.plugin_setup:plugin']
+    },
+    zip_safe=False,
+    package_data={
+        'q2_SRS': ['citations.bib']
+    }
+)
