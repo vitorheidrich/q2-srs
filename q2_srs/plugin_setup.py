@@ -15,9 +15,13 @@ plugin = qiime2.plugin.Plugin(
     website='http://www.github.com/vitorheidrich/q2-srs',
     package='q2_srs',
     citations=qiime2.plugin.Citations.load('citations.bib', package='q2_srs'),
-    description=('This QIIME 2 plugin performs scaling with ranked subsampling (SRS) for the normalization of ecological count data (frequency feature tables)'),
-    short_description='Scaling with ranked subsampling (SRS) for the normalization of ecological count data.',
-    user_support_text=('Raise an issue on the github repo (https://github.com/vitorheidrich/q2-srs) or contact us on the QIIME 2 forum (@vheidrich; @lukasbeule)')
+    description=('This QIIME 2 plugin performs scaling with ranked '
+                 'subsampling (SRS) for the normalization of ecological '
+                 'count data (frequency feature tables)'),
+    short_description=('Scaling with ranked subsampling (SRS) for the '
+                        'normalization of ecological count data.'),
+    user_support_text=('Raise an issue on the github repo (github.com/vitorheidrich/q2-srs) '
+                       'or contact us on the QIIME 2 forum (@vheidrich; @lukasbeule)')
 )
 
 # Registering the SRS function
