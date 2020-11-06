@@ -36,5 +36,6 @@ plugin.methods.register_function(
         'Cmin': ('The number of reads to which all samples will be normalized. Samples whose number of reads are lower than Cmin will be discarded')
     },
     name='SRS',
-    description=('Performs scaling with ranked subsampling (SRS) normalization of feature tables')
+    description=('Performs scaling with ranked' 
+                 'subsampling (SRS) normalization')
 )
