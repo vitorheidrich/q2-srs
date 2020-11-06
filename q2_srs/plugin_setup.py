@@ -4,6 +4,8 @@ from q2_types.feature_table import FeatureTable, Frequency
 
 import q2_srs
 
+from q2_srs._SRS import SRS
+
 cites = qiime2.plugin.Citations.load('citations.bib',
     package='q2_srs')
 
