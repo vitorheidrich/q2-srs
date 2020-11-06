@@ -22,7 +22,7 @@ plugin = qiime2.plugin.Plugin(
 plugin.methods.register_function(
     function=q2_srs.SRS,
     inputs={'table': FeatureTable[Frequency]},
-    outputs=['norm_table': FeatureTable[Frequency]],
+    outputs={'norm_table': FeatureTable[Frequency]},
     parameters={'Cmin': qiime2.plugin.Int},
     input_descriptions={
         'table': ('The feature table containing the samples to be normalized by SRS')
