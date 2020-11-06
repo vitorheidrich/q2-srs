@@ -2,25 +2,25 @@
 import qiime2.plugin
 from q2_types.feature_table import FeatureTable, Frequency
 
-import q2_SRS
+import q2_srs
 
 cites = qiime2.plugin.Citations.load('citations.bib',
-    package='q2_perc_norm')
+    package='q2_srs')
 
 plugin = qiime2.plugin.Plugin(
     name='SRS',
-    version=q2_SRS.__version__,
-    website='http://www.github.com/vitorheidrich/q2-SRS',
-    package='q2_SRS',
-    citations=qiime2.plugin.Citations.load('citations.bib', package='q2_SRS'),
+    version=q2_srs.__version__,
+    website='http://www.github.com/vitorheidrich/q2-srs',
+    package='q2_srs',
+    citations=qiime2.plugin.Citations.load('citations.bib', package='q2_srs'),
     description=('This QIIME 2 plugin performs scaling with ranked subsampling (SRS) for the normalization of ecological count data (frequency feature tables)'),
     short_description='Scaling with ranked subsampling (SRS) for the normalization of ecological count data.',
-    user_support_text=('Raise an issue on the github repo (https://github.com/vitorheidrich/q2-SRS) or contact us on the QIIME 2 forum (@vheidrich; @lukasbeule)')
+    user_support_text=('Raise an issue on the github repo (https://github.com/vitorheidrich/q2-srs) or contact us on the QIIME 2 forum (@vheidrich; @lukasbeule)')
 )
 
 # Registering the SRS function
 plugin.methods.register_function(
-    function=q2_SRS.SRS,
+    function=q2_srs.SRS,
     inputs={'table': FeatureTable[Frequency]},
     outputs=['norm_table': FeatureTable[Frequency]],
     parameters={'Cmin': qiime2.plugin.Int},
@@ -28,7 +28,7 @@ plugin.methods.register_function(
         'table': ('The feature table containing the samples to be normalized by SRS')
     },
     output_descriptions={
-        'norm_table': 'SRS normalized feature table to Cmin reads per sample'
+        'norm_table': 'SRS normalized feature table to Cmin (integer) reads per sample'
     },
     parameter_descriptions={
         'Cmin': 'The number of reads to which all samples will be normalized. Samples whose number of reads are lower than Cmin will be discarded'
