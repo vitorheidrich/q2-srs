@@ -44,5 +44,5 @@ plugin.methods.register_function(
                  'are lower than Cmin will be discarded.')
     },
     name='SRS',
-    description='Performs SRS normalization.'
+    description='Performs scaling with ranked subsampling normalization.'
 )
