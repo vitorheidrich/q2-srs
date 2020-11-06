@@ -35,7 +35,7 @@ plugin.methods.register_function(
                  'samples to be normalized by SRS.')
     },
     output_descriptions={
-        'norm_table': ('SRS normalized feature table to '
+        'norm_data': ('SRS normalized feature table to '
                        'Cmin (integer) reads per sample.')
     },
     parameter_descriptions={
