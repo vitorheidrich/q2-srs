@@ -44,6 +44,5 @@ plugin.methods.register_function(
                  'are lower than Cmin will be discarded.')
     },
     name='SRS normalization',
-    description=('Converts OTUs in case samples to percentiles of their '
-                 'distribution in controls.')
+    description=('Performs scaling with ranked subsampling (SRS) normalization')
 )
