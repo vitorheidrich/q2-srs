@@ -1,5 +1,6 @@
 
 import qiime2.plugin
+from qiime2.plugin import Int
 from q2_types.feature_table import FeatureTable, Frequency
 
 import q2_srs
@@ -29,7 +30,7 @@ plugin.methods.register_function(
     function=SRS,
     inputs={'table': FeatureTable[Frequency]},
     outputs=[('normalized_table', FeatureTable[Frequency])],
-    parameters={'Cmin': qiime2.plugin.Int},
+    parameters={'c_min': Int},
     input_descriptions={
         'table': ('The feature table containing the '
                  'samples to be normalized by SRS.')
@@ -39,9 +40,9 @@ plugin.methods.register_function(
                        'Cmin (integer) reads per sample.')
     },
     parameter_descriptions={
-        'Cmin': ('The number of reads to which all samples will '
+        'c_min': ('The number of reads to which all samples will '
                  'be normalized. Samples whose number of reads '
-                 'are lower than Cmin will be discarded.')
+                 'are lower than c_min will be discarded.')
     },
     name='SRS normalization',
     description=('Performs scaling with ranked subsampling (SRS) normalization')
