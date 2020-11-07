@@ -43,6 +43,6 @@ plugin.methods.register_function(
                  'be normalized. Samples whose number of reads '
                  'are lower than Cmin will be discarded.')
     },
-    name='SRS',
-    description={'Performs scaling with ranked subsampling normalization.'}
+    name='SRS normalization',
+    description=('Performs scaling with ranked subsampling normalization.')
 )
