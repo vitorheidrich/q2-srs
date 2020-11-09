@@ -33,7 +33,7 @@ def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
     if (c_min<=0):
         raise ValueError("Please provide a valid c_min (> 0)")
 
-    normalized_table = biom.Table()
+    #normalized_table = biom.Table()
     
     ## run the R script on the file
     with tempfile.TemporaryDirectory() as temp_dir_name:
@@ -43,9 +43,9 @@ def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
 
-        cmd = ['SRS.R', input_name, int(c_min), str(normalized_table)]
+        cmd = ['SRS.R', input_name, int(c_min)]
         run_commands([cmd])
-        norm_table_df = pd.read_csv(os.path.join(temp_dir_name, 'table.tsv'))
+        norm_table_df = pd.read_csv(os.path.join(temp_dir_name, 'norm_table.tsv'))
         
     norm_table_biom = biom.Table(data=norm_table_df.values,
                                  observation_ids=norm_table_df.index,
