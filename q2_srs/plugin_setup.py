@@ -30,7 +30,7 @@ plugin.methods.register_function(
     function=SRS,
     inputs={'table': FeatureTable[Frequency]},
     outputs=[('normalized_table', FeatureTable[Frequency])],
-    parameters={'c_min': Int},
+    parameters={'c_min': Int % Range(1, None)},
     input_descriptions={
         'table': ('The feature table containing the '
                  'samples to be normalized by SRS.')
