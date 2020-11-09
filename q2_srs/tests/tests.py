@@ -23,4 +23,4 @@ def check_format(table: biom.Table):
     return()
             
           
-check_format(load_table("q2_srs/tests/feature-table.biom"))
+check_format(biom.load_table("q2_srs/tests/feature-table.biom"))
