@@ -15,7 +15,7 @@ plugin = qiime2.plugin.Plugin(
     version=q2_srs.__version__,
     website='http://www.github.com/vitorheidrich/q2-srs',
     package='q2_srs',
-    citations=qiime2.plugin.Citations.load('citations.bib', package='q2_srs'),
+    citations=[cites['SRS2020beule']],
     description=('This QIIME 2 plugin performs scaling with ranked '
                  'subsampling (SRS) for the normalization of ecological '
                  'count data (frequency feature tables)'),
