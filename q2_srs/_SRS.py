@@ -43,10 +43,10 @@ def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
 
-        cmd = ['SRS.R', input_name, int(c_min), str(norm_table)]
+        cmd = ['SRS.R', input_name, int(c_min), str(normalized_table)]
         run_commands([cmd])
     
-    norm_table_df = pd.read_csv(norm_table)
+    norm_table_df = pd.read_csv(normalized_table)
     norm_table_biom = biom.Table(data=norm_table_df.values,
                                  observation_ids=norm_table_df.index,
                                  sample_ids=norm_table_df.columns)
