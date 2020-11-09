@@ -24,4 +24,4 @@ def check_format(table: biom.Table):
     return(table.to_tsv())
             
           
-write(check_format(open("q2_srs/tests/table-deblur.qza")),'q2_srs/tests/table.tsv")
+write(check_format(open("q2_srs/tests/table-deblur.qza")),'q2_srs/tests/table.tsv')
