@@ -32,6 +32,6 @@ norm_data<-SRS(data,c_min)
 rownames(norm_data) <- read.table(file = data, skip = 0, header = F, check.names = FALSE)[,1]
 
 
-write.table(norm_data, norm_data_name, sep = "\t", row.names = T, quote = F)
+write.table(norm_data, 'norm_table.tsv', sep = "\t", row.names = T, quote = F)
 
 q(status=0)
