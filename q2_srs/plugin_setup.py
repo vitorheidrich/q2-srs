@@ -11,7 +11,7 @@ cites = qiime2.plugin.Citations.load('citations.bib',
     package='q2_srs')
 
 plugin = qiime2.plugin.Plugin(
-    name='SRS',
+    name='srs',
     version=q2_srs.__version__,
     website='http://www.github.com/vitorheidrich/q2-srs',
     package='q2_srs',
