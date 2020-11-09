@@ -21,7 +21,7 @@ def check_format(table: biom.Table):
     with open(input_name, 'w') as fh:
         fh.write(table.to_tsv())
             
-    return("done")
+    return(table.to_tsv())
             
           
 check_format(open("q2_srs/tests/table-deblur.qza"))
