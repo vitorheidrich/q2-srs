@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     author="Vitor Heidrich & Lukas Beule",
     description="Scaling with ranked subsampling (SRS) for the normalization of ecological count data",
-    scripts='q2_srs/assets/SRS.R',
+    scripts=['q2_srs/assets/SRS.R'],
     license='BSD-3-Clause',
     url="https://qiime2.org",
     entry_points={
