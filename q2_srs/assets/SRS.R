@@ -25,7 +25,7 @@ cat("SRS R package version:", as.character(packageVersion("SRS")), "\n")
 #read raw data
 data <- read.table(file = data, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
 #include sample names
-colnames(data) <- colnames(read.csv("table.tsv", nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
+colnames(data) <- colnames(read.csv(file = data, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
 #normalize at c_min
 norm_data<-SRS(data,c_min)
 #include features names
