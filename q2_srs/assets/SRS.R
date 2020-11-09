@@ -4,7 +4,7 @@
 cat(R.version$version.string, "\n")
 args <- commandArgs(TRUE)
 
-filename <- args[[1]]
+filename <- as.string(args[[1]])
 c_min <- as.numeric(args[[2]])
 #norm_data_name <- args[[3]]
 
