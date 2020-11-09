@@ -34,7 +34,7 @@ plugin.methods.register_function(
     parameters={},
     input_descriptions={
         'table': ('The feature table containing the '
-                 'samples to be normalized by SRS.')),
+                 'samples to be normalized by SRS.'),
         'c_min': ('The number of reads to which all samples will '
                  'be normalized. Samples whose number of reads '
                  'are lower than c_min will be discarded.')
