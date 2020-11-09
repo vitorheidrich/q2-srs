@@ -40,7 +40,6 @@ def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
 
-
         cmd = ['SRS.R', input_name, int(c_min), str(norm_table)]
         run_commands([cmd])
     return norm_table
