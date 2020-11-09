@@ -19,17 +19,19 @@ if ("SRS" %in% installed.packages()[,"Package"]) {
     install.packages("SRS")
 }
 
-#transform python derived data into the R data that SRS likes
-
-#run SRS
-
 library(SRS)
 cat("SRS R package version:", as.character(packageVersion("SRS")), "\n")
 
+#read raw data
+data <- read.table(file = data, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
+#pick sample names
+colnames(data) <- colnames(read.csv("table.tsv", nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
+#normalize at c_min
 norm_data<-SRS(data,c_min)
+#pick features names
+rownames(norm_data) <- read.table(file = data, skip = 0, header = F, check.names = FALSE)[,1]
 
-write.table(norm_data, norm_data_name, sep = "\t",
-            row.names = F,
-            quote = F)
+
+write.table(norm_data, norm_data_name, sep = "\t", row.names = T, quote = F)
 
 q(status=0)
