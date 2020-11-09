@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 # Setup based on q2-emperor setup; inspired by q2-breakaway and q2-perc-normalize setups
 
 setup(
-    name="SRS",
+    name="srs",
     version="2020.8.0",
     packages=find_packages(),
     author="Vitor Heidrich & Lukas Beule",
