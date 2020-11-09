@@ -24,4 +24,4 @@ def check_format(table: biom.Table):
     return("done")
             
           
-check_format(open("table-deblur.qza"))
+check_format(open("q2_srs/tests/table-deblur.qza"))
