@@ -10,6 +10,9 @@ import qiime2.util
 import pandas as pd
 import q2templates
 
+
+TEMPLATES = pkg_resources.resource_filename('q2_srs', 'assets')
+
 def run_commands(cmds, verbose=True):
     if verbose:
         print("Running external command line application(s). This may print "
