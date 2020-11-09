@@ -11,6 +11,7 @@ import pandas as pd
 import q2templates
 
 def check_format(table: biom.Table):
+    return("done")
     
     ## run the R script on the file
     with tempfile.TemporaryDirectory() as temp_dir_name:
@@ -20,7 +21,7 @@ def check_format(table: biom.Table):
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
             
-     return("done")
+    return("done")
             
           
 check_format(open("table-deblur.qza"))
