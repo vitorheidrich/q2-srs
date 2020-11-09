@@ -11,17 +11,16 @@ import pandas as pd
 import q2templates
 
 def check_format(table: biom.Table):
-    #return("done")
     
     ## run the R script on the file
     #with tempfile.TemporaryDirectory() as temp_dir_name:
 
         ## write the biom table to file
-    #input_name = os.path.join('q2_srs/tests/', 'table.tsv')
-    #with open(input_name, 'w') as fh:
-    #    fh.write(table.to_tsv())
+    input_name = os.path.join('q2_srs/tests/', 'table.tsv')
+    with open(input_name, 'w') as fh:
+        fh.write(table.to_tsv())
             
-    return(table.to_tsv())
+    return()
             
           
-write(check_format(open("q2_srs/tests/table-deblur.qza")),'q2_srs/tests/table.tsv')
+check_format(open("q2_srs/tests/table-deblur.qza"))
