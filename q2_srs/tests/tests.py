@@ -19,7 +19,7 @@ def check_format(table: biom.Table):
         ## write the biom table to file
     input_name = os.path.join('q2_srs/tests/', 'table.tsv')
     with open(input_name, 'w') as fh:
-    fh.write(table.to_tsv())
+        fh.write(table.to_tsv())
             
     return("done")
             
