@@ -26,11 +26,11 @@ def run_commands(cmds, verbose=True):
         #    print(" ".join(cmd), end='\n\n')
         subprocess.run(cmd, check=True)
 
-def SRS(table: biom.Table, c_min: int) -> biom.Table:
+def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
         
-    if (c_min<=0):
+    if (c_min==0):
         raise ValueError("Please provide a valid c_min (> 0)")
 
     #normalized_table = biom.Table()
