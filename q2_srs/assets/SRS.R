@@ -5,7 +5,7 @@ args <- commandArgs(TRUE)
 
 data <- args[[1]]
 c_min <- args[[2]]
-norm_data_name <- args[[3]]
+#norm_data_name <- args[[3]]
 
 errQuit <- function(mesg, status=1) {
   message("Error: ", mesg)
@@ -30,7 +30,6 @@ colnames(data) <- colnames(read.csv(file = data, nrows=1, skip=1, sep = "\t", ch
 norm_data<-SRS(data,c_min)
 #include features names
 rownames(norm_data) <- read.table(file = data, skip = 0, header = F, check.names = FALSE)[,1]
-
 
 write.table(norm_data, 'norm_table.tsv', sep = "\t", row.names = T, quote = F)
 
