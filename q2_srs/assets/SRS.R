@@ -5,7 +5,7 @@ cat(R.version$version.string, "\n")
 args <- commandArgs(TRUE)
 
 data <- args[[1]]
-c_min <- args[[2]]
+c_min <- as.numeric(args[[2]])
 #norm_data_name <- args[[3]]
 
 errQuit <- function(mesg, status=1) {
