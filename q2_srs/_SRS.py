@@ -29,10 +29,7 @@ def run_commands(cmds, verbose=True):
 def SRS(table: biom.Table, c_min: int) -> biom.Table:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
-        
-    if (c_min==0):
-        raise ValueError("Please provide a valid c_min (> 0)")
-
+    
     #normalized_table = biom.Table()
     
     ## run the R script on the file
