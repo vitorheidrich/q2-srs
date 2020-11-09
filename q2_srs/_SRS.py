@@ -45,7 +45,7 @@ def SRS(table: biom.Table, c_min: int = 0) -> biom.Table:
 
         cmd = ['SRS.R', input_name, str(c_min)]
         run_commands([cmd])
-        norm_table_df = pd.read_csv(os.path.join(temp_dir_name, 'norm_table.tsv'))
+        norm_table_df = pd.read_csv(input_name)
         
     norm_table_biom = biom.Table(data=norm_table_df.values,
                                  observation_ids=norm_table_df.index,
