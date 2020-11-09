@@ -4,7 +4,7 @@
 cat(R.version$version.string, "\n")
 args <- commandArgs(TRUE)
 
-data <- args[[1]]
+filename <- args[[1]]
 c_min <- as.numeric(args[[2]])
 #norm_data_name <- args[[3]]
 
@@ -24,13 +24,13 @@ library(SRS)
 cat("SRS R package version:", as.character(packageVersion("SRS")), "\n")
 
 #read raw data
-data <- read.table(file = data, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
+data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
 #include sample names
-colnames(data) <- colnames(read.csv(file = data, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
+colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
 #normalize at c_min
 norm_data<-SRS(data,c_min)
 #include features names
-rownames(norm_data) <- read.table(file = data, skip = 0, header = F, check.names = FALSE)[,1]
+rownames(norm_data) <- read.table(file = filename, skip = 0, header = F, check.names = FALSE)[,1]
 
 write.table(norm_data, 'norm_table.tsv', sep = "\t", row.names = T, quote = F)
 
