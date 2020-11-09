@@ -16,8 +16,8 @@ def check_format(table: biom.Table):
     #with tempfile.TemporaryDirectory() as temp_dir_name:
 
         ## write the biom table to file
-    input_name = os.path.join('q2_srs/tests/', 'table.tsv')
-    with open(input_name, 'w') as fh:
+    #input_name = os.path.join('q2_srs/tests/', 'table.tsv')
+    with open('q2_srs/tests/table.tsv', 'w') as fh:
         fh.write(table.to_tsv())
             
     return()
