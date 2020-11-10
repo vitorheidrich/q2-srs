@@ -31,7 +31,7 @@ plugin.methods.register_function(
     inputs={'table': FeatureTable[Frequency]},
     outputs=[('normalized_table', FeatureTable[Frequency])],
     parameters={'c_min': Int % Range(1, None),
-               'seet_seed: Bool,
+               'seet_seed': Bool,
                'seed': Int % Range(1, None)},
     input_descriptions={
         'table': ('The feature table containing the '
@@ -46,7 +46,8 @@ plugin.methods.register_function(
                  'be normalized. Samples whose number of reads '
                  'are lower than c_min will be discarded.'),
         'set_seed': ('Set a seed to enable reproducibility of SRS.'),
-        'seed': ('Specify the integer seed to be used.')
+        'seed': ('Specify the integer seed to be used. ' 
+                 'Only used if set_seed is true')
     },
     name='SRS normalization',
     description=('Performs scaling with ranked subsampling (SRS) normalization')
