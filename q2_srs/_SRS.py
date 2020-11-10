@@ -26,7 +26,7 @@ def run_commands(cmds, verbose=True):
         #    print(" ".join(cmd), end='\n\n')
         subprocess.run(cmd, check=True)
 
-def SRS(table: biom.Table, c_min: int) -> biom.Table:
+def SRS(table: biom.Table, c_min: int, set_seed: bool = True, seed: int = 1) -> biom.Table:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
     
@@ -40,7 +40,7 @@ def SRS(table: biom.Table, c_min: int) -> biom.Table:
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
 
-        cmd = ['SRS.R', input_name, str(c_min)]
+        cmd = ['SRS.R', input_name, str(c_min), str(set_seed), str(seed)]
         run_commands([cmd])
         norm_table_df = pd.read_csv(input_name, sep='\t')
         
