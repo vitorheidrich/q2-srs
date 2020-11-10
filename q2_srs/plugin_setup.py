@@ -1,6 +1,6 @@
 
 import qiime2.plugin
-from qiime2.plugin import Int, Range, Bool
+from qiime2.plugin import (Int, Range, Bool)
 from q2_types.feature_table import FeatureTable, Frequency
 
 import q2_srs
