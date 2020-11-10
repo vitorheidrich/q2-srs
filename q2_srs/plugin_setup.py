@@ -31,7 +31,7 @@ plugin.methods.register_function(
     inputs={'table': FeatureTable[Frequency]},
     outputs=[('normalized_table', FeatureTable[Frequency])],
     parameters={'c_min': Int % Range(1, None),
-               'seet_seed': Bool,
+               'set_seed': Bool,
                'seed': Int % Range(1, None)},
     input_descriptions={
         'table': ('The feature table containing the '
