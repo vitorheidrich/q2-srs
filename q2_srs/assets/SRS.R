@@ -14,7 +14,7 @@ errQuit <- function(mesg, status=1) {
 }
 
 #Check SRS installations and install SRS if needed
-if ("SRS" %in% installed.packages()[,"Package"]) {
+if ("SRS" %in% installed.packages()[,"Package"] & packageVersion("SRS")=="0.1.2") { #UPDATE LATER
     cat("SRS package already installed! \n\n")
 } else {
     install.packages("SRS")
@@ -29,11 +29,9 @@ data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.
 colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
 #normalize at c_min
 norm_data<-SRS(data,c_min)
-print("SRS ok")
 #include features names
 rownames(norm_data) <- read.table(file = filename, skip = 0, header = F, check.names = FALSE)[,1]
 
 write.table(norm_data, filename, sep = "\t", row.names = T, quote = F)
-print("write.ok")
 
 q(status=0)
