@@ -19,13 +19,6 @@ rarefy.linetype <- as.character(args[[12]])
 label <- as.logical(args[[13]])
 output_dir <- as.character(args[[14]])
 
-input_name, str(metric), str(step), str(sample),
-              str(max.sample.size), str(rarefy.comparison), str(rarefy.repeats),
-              str(rarefy.comparison.legend), str(SRS.color), str(label), str(output_dir)
-
-if(set_seed%in%c("T","True")){set_seed<-T}
-else{set_seed<-F}
-
 errQuit <- function(mesg, status=1) {
   message("Error: ", mesg)
   q(status=status)
@@ -45,11 +38,16 @@ cat("SRS R package version:", as.character(packageVersion("SRS")), "\n")
 data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
 #include sample names
 colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
-#normalize at c_min
-norm_data<-SRS(data, c_min, set_seed = set_seed, seed = seed)
-#include features names
-rownames(norm_data) <- read.table(file = filename, skip = 0, header = F, check.names = FALSE)[,1]
 
-write.table(norm_data, filename, sep = "\t", row.names = T, quote = F)
+#plot SRScurves
+plot <- SRScurve(data, metric = metric, step = step, sample = sample, max.sample.size = max.sample.size,
+              rarefy.comparison = rarefy.comparison, rarefy.repeats = rarefy.repeats,
+              rarefy.comparison.legend = rarefy.comparison.legend, col = c(SRS.color, rarefy.color),
+              lty = c(SRS.linetype, rarefy.linetype), label = label)
+
+#save plot to file
+png(paste0(output_dir,"/SRScurve_plot.png"), width = 10, height = 10)
+plot
+dev.off()
 
 q(status=0)
