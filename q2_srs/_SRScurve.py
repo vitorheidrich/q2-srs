@@ -26,7 +26,7 @@ def run_commands(cmds, verbose=True):
         #    print(" ".join(cmd), end='\n\n')
         subprocess.run(cmd, check=True)
         
-def SRScurve(table: biom.Table, metric: str = 'richness', step: int = 50,
+def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step: int = 50,
             sample: int = 0, max.sample.size: int = 0, rarefy.comparison: bool = False,
             rarefy.repeats: int = 10, rarefy.comparison.legend: bool = False, SRS.color: str = 'black', 
             rarefy.color: str = 'red', SRS.linetype: str = 'solid', rarefy.linetype: str = 'solid', label: bool = False) -> None:
@@ -45,11 +45,11 @@ def SRScurve(table: biom.Table, metric: str = 'richness', step: int = 50,
 
         cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
               str(max.sample.size), str(rarefy.comparison), str(rarefy.repeats),
-              str(rarefy.comparison.legend), str(SRS.color), str(label)]
+              str(rarefy.comparison.legend), str(SRS.color), str(label), str(output_dir)]
         run_commands([cmd])
-        #norm_table_df = pd.read_csv(input_name, sep='\t')
         
-    #norm_table_biom = biom.Table(data=norm_table_df.values,
-                                 observation_ids=norm_table_df.index,
-                                 sample_ids=norm_table_df.columns)
-    #return norm_table_biom
+    #plot = os.path.join(output_dir,'plot.png')
+    index = os.path.join(output_dir, 'index.html')
+        
+    with open(index, 'w') as fh:
+        fh.write('<!DOCTYPE html><head></head><body><img src="SRScurve_plot.png" style="max-width: 100vw;max-height: 100vh;object-fit: contain" /></body></html>')
