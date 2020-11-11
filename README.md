@@ -40,8 +40,9 @@ qiime srs SRScurve \
   --p-rarefy-comparison \
   --p-SRS-color 'blue' \
   --p-rarefy-color 'grey' \
-  --o-output-dir test_data/results
+  --o-visualization test_data/SRScurve-plot.qzv
 ```
+<!---INCLUDE SRScurve OUTPUT--->
 #### 2) Running SRS
 To run `SRS` the only required input is the OTU/ASV table and the chosen C<sub>min</sub> (based on SRScurve output). Please run `qiime srs SRS --help` to see the full options.
 
