@@ -27,7 +27,7 @@ To see the full options of each command run `qiime srs SRS --help` or `qiime srs
 
 ## Normalizing your data using SRS
 
-In order to normalize your samples to the same number of reads per sample, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. Such cut-off is called C_{min} (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). Once you choose a good C_{min}, run `SRS`with the C_{min} that suits your data. The output of `SRS` will be a SRS normalized OTU table .qza file.
+In order to normalize your samples to the same number of reads per sample, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called $C_{min}$ (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). Once you choose a good C_{min}, run `SRS`with the C_{min} that suits your data. The output of `SRS` will be a SRS normalized OTU table .qza file.
 
 ### Running SRScurve
 
