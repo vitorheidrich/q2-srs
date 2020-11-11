@@ -9,7 +9,7 @@ Read more about the normalization method in the SRS [paper](https://doi.org/10.7
 
 To install q2-srs plugin from conda, run:
 ```
-conda install -c cduvallet q2_perc_norm
+conda install -c vitorheidrich q2_srs
 ```
 To install manually, clone this repository to your computer, `cd` into the main directory, and run:
 ```
