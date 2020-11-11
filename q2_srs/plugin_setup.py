@@ -70,7 +70,7 @@ plugin.visualizers.register_function(
                'SRS_color': Str,
                'rarefy_color': Str,
                'SRS_linetype': Str,
-               'label': Bool}
+               'label': Bool},
     input_descriptions={
         'table': ('The feature table containing the '
                   'samples to be evaluated by SRScurve.')
