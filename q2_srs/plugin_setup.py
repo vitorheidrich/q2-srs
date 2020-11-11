@@ -91,15 +91,15 @@ plugin.visualizers.register_function(
                             'size.'),
         'rarefy_comparison': ('Median values of rarefy with n repeats specified by '
                               'rarefy.repeats will be drawn for comparison.'),
-        'rarefy_repeats': ('Specify the number of repeats used to obtain median 
+        'rarefy_repeats': ('Specify the number of repeats used to obtain median '
                            'values for rarefying. Only used if rarefy.comparison '
                            'is true'),
-        'rarefy_comparison_legend': ('Show legend indicating SRS and rarefy derived curves. 
+        'rarefy_comparison_legend': ('Show legend indicating SRS and rarefy derived curves. '
                                      'Only used if rarefy.comparison is true.'),
         'SRS_color': ('Color to be used for SRScurves. Check R documentation '
                      'for options.'),
-        'rarefy_color': ('Color to be used for rarefaction curves. Only used if 
-                         'rarefy.comparison is true. Check R documentation for 
+        'rarefy_color': ('Color to be used for rarefaction curves. Only used if '
+                         'rarefy.comparison is true. Check R documentation for '
                          'options.'),
         'SRS_linetype': ('Line type to be used for SRScurves. Check R documentation '
                          'for options.'),
