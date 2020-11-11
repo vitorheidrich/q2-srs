@@ -5,9 +5,23 @@ cat(R.version$version.string, "\n")
 args <- commandArgs(TRUE)
 
 filename <- as.character(args[[1]])
-c_min <- as.numeric(args[[2]])
-set_seed <- as.character(args[[3]])
-seed <- as.numeric(args[[4]])
+metric <- as.character(args[[2]])
+step <- as.numeric(args[[3]])
+sample <- as.numeric(args[[4]])
+max.sample.size <- as.numeric(args[[5]])
+rarefy.comparison <- as.logical(args[[6]])
+rarefy.repeats <- as.numeric(args[[7]])
+rarefy.comparison.legend <- as.logical(args[[8]])
+SRS.color <- as.character(args[[9]])
+rarefy.color <- as.character(args[[10]])
+SRS.linetype <- as.character(args[[11]])
+rarefy.linetype <- as.character(args[[12]])
+label <- as.logical(args[[13]])
+output_dir <- as.character(args[[14]])
+
+input_name, str(metric), str(step), str(sample),
+              str(max.sample.size), str(rarefy.comparison), str(rarefy.repeats),
+              str(rarefy.comparison.legend), str(SRS.color), str(label), str(output_dir)
 
 if(set_seed%in%c("T","True")){set_seed<-T}
 else{set_seed<-F}
