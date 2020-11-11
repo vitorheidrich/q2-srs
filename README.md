@@ -34,6 +34,9 @@ In order to normalize your samples to the same number of reads per sample, we re
 ### Running SRS
 
 #### Citing
-If you use this plugin in your research paper, please cite as
+If you use this plugin in your research paper, please cite as:
 
-* Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. *PeerJ* 8:e9593
+Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. *PeerJ* 8:e9593
+
+<!---Change the proposed cite to the practical guide later--->
+
