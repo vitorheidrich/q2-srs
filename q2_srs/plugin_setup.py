@@ -1,6 +1,6 @@
 
 import qiime2.plugin
-from qiime2.plugin import (Int, Range, Bool)
+from qiime2.plugin import (Int, Range, Bool, Str, Choices)
 from q2_types.feature_table import FeatureTable, Frequency
 
 import q2_srs
@@ -52,7 +52,7 @@ plugin.methods.register_function(
     },
     name='SRS normalization',
     description=('Performs scaling with ranked subsampling (SRS) for '
-                 'the normalization of ecological/microbiome count data.'
+                 'the normalization of ecological/microbiome count data.')
 )
 
 # Registering the SRScurve function
@@ -60,9 +60,16 @@ plugin.visualizers.register_function(
     function=SRScurve,
     inputs={'table': FeatureTable[Frequency]},
     #outputs=[('normalized_table', FeatureTable[Frequency])],
-    parameters={'c_min': Int % Range(1, None),
-               'set_seed': Bool,
-               'seed': Int % Range(1, None)},
+    parameters={'metric': Str % Choices(['richness', 'shannon', 'simpson', 'invsimpson']),
+               'step': Int % Range(1, None),
+               'sample': Int % Range(1, None),
+               'max.sample.size': Int % Range(1, None),
+               'rarefy.comparison': Bool,
+               'rarefy.repeats': Int % Range(1, None),
+               'rarefy.comparison.legend': Bool,
+               'SRS.color': Str,
+               'rarefy.color': Str,
+               'SRS.linetype': Str}
     input_descriptions={
         'table': ('The feature table containing the '
                  'samples to be evaluated by SRScurve.')
@@ -88,12 +95,16 @@ plugin.visualizers.register_function(
                            'is true'),
         'rarefy.comparison.legend': ('Show legend indicating SRS and rarefy derived curves. 
                                      'Only used if rarefy.comparison is true.'),
-        'SRScurve.color': ('Color to be used for SRScurves.'),
+        'SRS.color': ('Color to be used for SRScurves. Check R documentation '
+                     'for options.'),
         'rarefy.color': ('Color to be used for rarefaction curves. Only used if 
-                         'rarefy.comparison is true.'),
-        'SRScurve.linetype': ('Line type to be used for SRScurves.'),
+                         'rarefy.comparison is true. Check R documentation for 
+                         'options.'),
+        'SRS.linetype': ('Line type to be used for SRScurves. Check R documentation '
+                         'for options.'),
         'rarefy.linetype': ('Line type to be used for rarefaction curves. Only '
-                            'used if rarefy.comparison is true.'),
+                            'used if rarefy.comparison is true. Check R documentation '
+                            'for options.'),
     },
     name='SRS normalization',
     description=('For each sample, draws a line plot of alpha diversity '
