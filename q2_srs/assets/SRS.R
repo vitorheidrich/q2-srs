@@ -11,7 +11,6 @@ seed <- as.numeric(args[[4]])
 
 if(set_seed%in%c("T","True")){set_seed<-T}
 else{set_seed<-F}
-#norm_data_name <- args[[3]]
 
 errQuit <- function(mesg, status=1) {
   message("Error: ", mesg)
@@ -19,7 +18,7 @@ errQuit <- function(mesg, status=1) {
 }
 
 #Check SRS installations and install SRS if needed
-if ("SRS" %in% installed.packages()[,"Package"] & packageVersion("SRS")=="0.1.2") { #UPDATE LATER
+if ("SRS" %in% installed.packages()[,"Package"] & packageVersion("SRS")=="0.2.0") { 
     cat("SRS package already installed! \n\n")
 } else {
     install.packages("SRS")
