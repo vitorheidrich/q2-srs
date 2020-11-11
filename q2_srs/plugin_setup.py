@@ -66,7 +66,7 @@ plugin.visualizers.register_function(
                'max_sample_size': Int % Range(1, None),
                'rarefy_comparison': Bool,
                'rarefy_repeats': Int % Range(1, None),
-               'rarefy_comparison.legend': Bool,
+               'rarefy_comparison_legend': Bool,
                'SRS_color': Str,
                'rarefy_color': Str,
                'SRS_linetype': Str,
