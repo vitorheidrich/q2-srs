@@ -36,10 +36,10 @@ Usage example with the `table.qza` from the `test_data` folder:
 ```
 qiime srs SRScurve \
   --i-table test_data/table.qza \
-  --p-metric "shannon" \
+  --p-metric 'shannon' \
   --p-rarefy-comparison \
-  --p-SRS-color "blue" \
-  --p-rarefy-color "grey \
+  --p-SRS-color 'blue' \
+  --p-rarefy-color 'grey' \
   --o-output-dir test_data/results
 ```
 ### 2) Running SRS
