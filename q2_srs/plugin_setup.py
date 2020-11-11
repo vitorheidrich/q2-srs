@@ -50,7 +50,7 @@ plugin.methods.register_function(
         'seed': ('Specify the integer seed to be used. ' 
                  'Only used if set_seed is true.')
     },
-    name='SRS normalization',
+    name='Scaling with ranked subsampling normalization',
     description=('Performs scaling with ranked subsampling (SRS) for '
                  'the normalization of ecological/microbiome count data.')
 )
@@ -109,7 +109,7 @@ plugin.visualizers.register_function(
                             'for options.'),
         'label': ('Include sample id labels')
     },
-    name='SRS normalization',
+    name='Scaling with ranked subsampling curve',
     description=('For each sample, draws a line plot of alpha diversity '
                  'indices at different sample sizes (specified by step) '
                  'normalized by scaling with ranked subsampling. Minimum '
