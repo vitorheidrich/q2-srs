@@ -69,7 +69,8 @@ plugin.visualizers.register_function(
                'rarefy.comparison.legend': Bool,
                'SRS.color': Str,
                'rarefy.color': Str,
-               'SRS.linetype': Str}
+               'SRS.linetype': Str,
+               'label': Bool}
     input_descriptions={
         'table': ('The feature table containing the '
                  'samples to be evaluated by SRScurve.')
@@ -105,6 +106,7 @@ plugin.visualizers.register_function(
         'rarefy.linetype': ('Line type to be used for rarefaction curves. Only '
                             'used if rarefy.comparison is true. Check R documentation '
                             'for options.'),
+        'label': ('Include sample id labels')
     },
     name='SRS normalization',
     description=('For each sample, draws a line plot of alpha diversity '
