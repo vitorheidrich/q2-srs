@@ -27,9 +27,9 @@ def run_commands(cmds, verbose=True):
         subprocess.run(cmd, check=True)
         
 def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step: int = 50,
-            sample: int = 0, max.sample.size: int = 0, rarefy.comparison: bool = False,
-            rarefy.repeats: int = 10, rarefy.comparison.legend: bool = False, SRS.color: str = 'black', 
-            rarefy.color: str = 'red', SRS.linetype: str = 'solid', rarefy.linetype: str = 'solid', label: bool = False) -> None:
+            sample: int = 0, max_sample_size: int = 0, rarefy_comparison: bool = False,
+            rarefy_repeats: int = 10, rarefy_comparison_legend: bool = False, SRS_color: str = 'black', 
+            rarefy_color: str = 'red', SRS_linetype: str = 'solid', rarefy_linetype: str = 'solid', label: bool = False) -> None:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
     
@@ -42,9 +42,9 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
             fh.write(table.to_tsv())
 
         cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
-              str(max.sample.size), str(rarefy.comparison), str(rarefy.repeats),
-              str(rarefy.comparison.legend), str(SRS.color), str(rarefy.color), 
-              str(SRS.linetype), str(rarefy.linetype), str(label), str(output_dir)]
+              str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
+              str(rarefy_comparison_legend), str(SRS_color), str(rarefy_color), 
+              str(SRS_linetype), str(rarefy_linetype), str(label), str(output_dir)]
         run_commands([cmd])
         
     #plot = os.path.join(output_dir,'plot.png')
