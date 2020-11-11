@@ -29,7 +29,7 @@ def run_commands(cmds, verbose=True):
 def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step: int = 50,
             sample: int = 0, max_sample_size: int = 0, rarefy_comparison: bool = False,
             rarefy_repeats: int = 10, rarefy_comparison_legend: bool = False, SRS_color: str = 'black', 
-            rarefy_color: str = 'red', SRS_linetype: str = 'solid', rarefy_linetype: str = 'solid', label: bool = False) -> None:
+            rarefy_color: str = 'red', SRS_linetype: str = 'solid', rarefy_linetype: str = 'longdash', label: bool = False) -> None:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
     
