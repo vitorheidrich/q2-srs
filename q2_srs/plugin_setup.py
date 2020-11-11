@@ -63,17 +63,17 @@ plugin.visualizers.register_function(
     parameters={'metric': Str % Choices(['richness', 'shannon', 'simpson', 'invsimpson']),
                'step': Int % Range(1, None),
                'sample': Int % Range(1, None),
-               'max.sample.size': Int % Range(1, None),
-               'rarefy.comparison': Bool,
-               'rarefy.repeats': Int % Range(1, None),
-               'rarefy.comparison.legend': Bool,
-               'SRS.color': Str,
-               'rarefy.color': Str,
-               'SRS.linetype': Str,
+               'max_sample_size': Int % Range(1, None),
+               'rarefy_comparison': Bool,
+               'rarefy_repeats': Int % Range(1, None),
+               'rarefy_comparison.legend': Bool,
+               'SRS_color': Str,
+               'rarefy_color': Str,
+               'SRS_linetype': Str,
                'label': Bool}
     input_descriptions={
         'table': ('The feature table containing the '
-                 'samples to be evaluated by SRScurve.')
+                  'samples to be evaluated by SRScurve.')
     },
     #output_descriptions={
     #    'normalized_table': ('SRS normalized feature table to '
@@ -86,24 +86,24 @@ plugin.visualizers.register_function(
         'step': ('Specify the step to vary the sample size.'),
         'sample': ('Specify the cutoff-level to visualize trade-offs between '
                    'cutoff-level and alpha diversity.'),
-        'max.sample.size': ('Specify the maximum sample size to which SRS curves '
+        'max_sample_size': ('Specify the maximum sample size to which SRS curves '
                             'are drawn. Default does not limit the maximum sample '
                             'size.'),
-        'rarefy.comparison': ('Median values of rarefy with n repeats specified by '
+        'rarefy_comparison': ('Median values of rarefy with n repeats specified by '
                               'rarefy.repeats will be drawn for comparison.'),
-        'rarefy.repeats': ('Specify the number of repeats used to obtain median 
+        'rarefy_repeats': ('Specify the number of repeats used to obtain median 
                            'values for rarefying. Only used if rarefy.comparison '
                            'is true'),
-        'rarefy.comparison.legend': ('Show legend indicating SRS and rarefy derived curves. 
+        'rarefy_comparison_legend': ('Show legend indicating SRS and rarefy derived curves. 
                                      'Only used if rarefy.comparison is true.'),
-        'SRS.color': ('Color to be used for SRScurves. Check R documentation '
+        'SRS_color': ('Color to be used for SRScurves. Check R documentation '
                      'for options.'),
-        'rarefy.color': ('Color to be used for rarefaction curves. Only used if 
+        'rarefy_color': ('Color to be used for rarefaction curves. Only used if 
                          'rarefy.comparison is true. Check R documentation for 
                          'options.'),
-        'SRS.linetype': ('Line type to be used for SRScurves. Check R documentation '
+        'SRS_linetype': ('Line type to be used for SRScurves. Check R documentation '
                          'for options.'),
-        'rarefy.linetype': ('Line type to be used for rarefaction curves. Only '
+        'rarefy_linetype': ('Line type to be used for rarefaction curves. Only '
                             'used if rarefy.comparison is true. Check R documentation '
                             'for options.'),
         'label': ('Include sample id labels')
