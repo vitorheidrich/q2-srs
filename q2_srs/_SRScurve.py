@@ -33,8 +33,6 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
     if table.is_empty():
         raise ValueError("The provided table object is empty")
     
-    #normalized_table = biom.Table()
-    
     ## run the R script on the file
     with tempfile.TemporaryDirectory() as temp_dir_name:
 
