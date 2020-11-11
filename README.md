@@ -1,6 +1,6 @@
 # q2-srs
 
-QIIME2 plugin for microbiome count data normalization by scaling with ranked subsampling (SRS) 
+QIIME2 plugin for microbiome count data normalization by scaling with ranked subsampling (SRS).
 
 Read more about the normalization method in the SRS [paper](https://doi.org/10.7717/peerj.9593) (Beule and Karlovsky, PeerJ 2020).
 <!---To more details on the usage of SRS, take a look at the practical guide [paper]() ().--->
@@ -27,7 +27,7 @@ To see the full options of each command run `qiime srs SRS --help` or `qiime srs
 
 ## Normalizing your data using SRS
 
-In order to normalize your samples to the same number of reads per sample, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called C<sup>min</sup> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). Once you choose a good C_{min}, run `SRS`with the C_{min} that suits your data. The output of `SRS` will be a SRS normalized OTU table .qza file.
+In order to normalize your samples to the same number of reads per sample, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). Once you choose a good C<sub>min</sub>, run `SRS`with the C<sub>min</sub> that suits your data. The output of `SRS` will be a SRS normalized OTU/ASV table .qza file.
 
 ### Running SRScurve
 
@@ -37,6 +37,7 @@ In order to normalize your samples to the same number of reads per sample, we re
 If you use this plugin in your research paper, please cite as:
 
 Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. *PeerJ* 8:e9593
-
 <!---Change the proposed cite to the practical guide later--->
 
+#### Thanking
+We would like to thank Claire Duvallet (@cduvallet) for her great [tutorial](https://cduvallet.github.io/posts/2018/03/qiime2-plugin) on how to build a QIIME2 plugin.
