@@ -6,11 +6,8 @@ args <- commandArgs(TRUE)
 
 filename <- as.character(args[[1]])
 c_min <- as.numeric(args[[2]])
-set_seed <- as.character(args[[3]])
+set_seed <- as.logical(args[[3]])
 seed <- as.numeric(args[[4]])
-
-if(set_seed%in%c("T","True")){set_seed<-T}
-else{set_seed<-F}
 
 errQuit <- function(mesg, status=1) {
   message("Error: ", mesg)
