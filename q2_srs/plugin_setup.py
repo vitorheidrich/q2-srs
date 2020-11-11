@@ -40,12 +40,12 @@ plugin.methods.register_function(
     },
     output_descriptions={
         'normalized_table': ('SRS normalized feature table to '
-                       'Cmin (integer) reads per sample.')
+                             'c_min reads per sample.')
     },
     parameter_descriptions={
         'c_min': ('The number of reads to which all samples will '
-                 'be normalized. Samples whose number of reads '
-                 'are lower than c_min will be discarded.'),
+                  'be normalized. Samples whose number of reads '
+                  'are lower than c_min will be discarded.'),
         'set_seed': ('Set a seed to enable reproducibility of SRS.'),
         'seed': ('Specify the integer seed to be used. ' 
                  'Only used if set_seed is true.')
