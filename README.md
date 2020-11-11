@@ -7,6 +7,10 @@ Read more about the normalization method in the SRS [paper](https://doi.org/10.7
 
 ## Installing
 
+Activate your `qiime2` environment by running (or equivalent):
+```
+conda activate qiime2-2020.8
+```
 To install q2-srs plugin from conda, run:
 ```
 conda install -c vitorheidrich q2_srs
@@ -15,7 +19,7 @@ To install manually, clone this repository to your computer, `cd` into the main 
 ```
 python setup.py install
 ```
-Check for a sucessful installation by running `qiime srs` from an active `qiime2` environment. A description of the q2-srs plugin and its commands should show up.
+Check for a sucessful installation by running `qiime srs`. A description of the q2-srs plugin should show up.
 
 ## Using
 
