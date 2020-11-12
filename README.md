@@ -31,9 +31,7 @@ To see the full options of each command run `qiime srs SRS --help` or `qiime srs
 
 We also encourage you to explore the [SRS Shiny app](), that is specifically designed for q2-srs users.
 
-### Normalizing your data using SRS
-In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). This table is summarized below:
-<!---INCLUDE OUTPUT--->
+### Usage recommendations
 
 In order to normalize your samples to the same number of reads per sample using SRS, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). 
 
@@ -45,6 +43,11 @@ Alternatively (and complementarily), we strongly advise for the use of the [SRS 
 
 Once you have chosen an adequate C<sub>min</sub>, run `SRS` with the C<sub>min</sub> that suits your data. The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> reads per sample that is ready for the next steps of your pipeline.
 
+### Usage examples
+
+In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). This table is summarized below:
+
+<!---INCLUDE OUTPUT--->
 #### 1) Running SRScurve
 To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScurve` is highly customizable, allowing different alpha diversity indices, a comparison with repeated rarefying and many other analytical/aesthetic options<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Please run `qiime srs SRScurve --help` to see the full options.
 
@@ -79,11 +82,11 @@ qiime feature-table summarize \
   --o-visualization example_data/norm-table.qzv
 ```
 <!---INCLUDE OUTPUT--->
-##### Citing
+##### Citation
 If you use this plugin in your research paper, please cite as:
 
 Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. [*PeerJ* 8:e9593](https://doi.org/10.7717/peerj.9593)
 <!---Change the proposed cite to the practical guide later--->
 
-##### Thanking
+##### Acknowledgment
 We would like to thank Claire Duvallet (@cduvallet) for her great [tutorial](https://cduvallet.github.io/posts/2018/03/qiime2-plugin) on how to build a QIIME2 plugin.
