@@ -29,6 +29,8 @@ q2-srs features two `qiime` commands:
 
 To see the full options of each command run `qiime srs SRS --help` or `qiime srs SRScurve --help`.
 
+We also encourage you to explore the '[SRS Shiny app]()', that is specifically designed for q2-srs users.
+
 ### Normalizing your data using SRS
 In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). This table is summarized below:
 <!---INCLUDE OUTPUT--->
