@@ -8,7 +8,6 @@
 
 from setuptools import setup, find_packages
 
-# Setup based on q2-emperor setup; inspired by q2-breakaway and q2-perc-normalize setups
 
 setup(
     name="srs",
