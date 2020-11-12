@@ -33,15 +33,16 @@ We also encourage you to explore the [SRS Shiny app](), that is specifically des
 
 ### Usage recommendations
 
-In order to normalize your samples to the same number of reads per sample using SRS, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). 
+In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first in order to determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). 
 
-Alternatively (and complementarily), we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>]() <!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)--> to help with your decision. Just upload your ASV/OTU table (.qza) and the app will provide:
+Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>]() <!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)--> to help with your decision. Just upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
 * A simpler SRScurve plot (use the q2-srs SRScurve for the full experience)
 * Summary statistics on trade-offs between C<sub>min</sub> and the number of retained samples
 * Summary statistics on trade-offs between C<sub>min</sub> and the diversity retained per sample
 
-Once you have chosen an adequate C<sub>min</sub>, run `SRS` with the C<sub>min</sub> that suits your data. The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> reads per sample that is ready for the next steps of your pipeline.
+Once you have chosen an adequate C<sub>min</sub>, run `SRS` with the C<sub>min</sub> that suits your data. 
+The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> reads per sample that is ready for the next steps of your pipeline.
 
 ### Usage examples
 
@@ -88,5 +89,5 @@ If you use this plugin in your research paper, please cite as:
 Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. [*PeerJ* 8:e9593](https://doi.org/10.7717/peerj.9593)
 <!---Change the proposed cite to the practical guide later--->
 
-##### Acknowledgment
+##### Acknowledgement
 We would like to thank Claire Duvallet (@cduvallet) for her great [tutorial](https://cduvallet.github.io/posts/2018/03/qiime2-plugin) on how to build a QIIME2 plugin.
