@@ -50,8 +50,15 @@ qiime srs SRScurve \
 ```
 <!---INCLUDE OUTPUT--->
 <!---INCLUDE DISCUSSION--->
+
+Alternatively (and complementarily), we strongly advise for the use of the '[SRS Shiny app for the determination of C<sub>min</sub>]()' <!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)--> to help with your decision. The app will provide:
+* A rug plot of the read counts per sample
+* A simpler SRScurve plot
+* Summary statistics on trade offs between C<sub>min</sub> and the number of retained samples
+* Summary statistics on trade offs between C<sub>min</sub> and the diversity retained per sample
+
 #### 2) Running SRS
-To run `SRS` the only required input is the OTU/ASV table and the chosen C<sub>min</sub> (based on SRScurve output). Please run `qiime srs SRS --help` to see the full options.
+To run `SRS` the only required input is the OTU/ASV table and the chosen C<sub>min</sub>. Please run `qiime srs SRS --help` to see the full options.
 
 Usage example with the `table.qza` from the `example_data` folder and the C<sub>min</sub> as determined above:
 ```
