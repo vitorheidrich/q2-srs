@@ -92,4 +92,4 @@ Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecol
 <!---Change the proposed cite to the practical guide later--->
 
 ##### Acknowledgement
-We would like to thank Claire Duvallet (@cduvallet) for her great tutorials ([link 1](https://cduvallet.github.io/posts/2018/03/qiime2-plugin); [link 2](https://cduvallet.github.io/posts/2018/06/qiime2-plugin-conda)) on how to build a QIIME2 plugin.
+We would like to thank Claire Duvallet (@cduvallet) for her great tutorials ([I](https://cduvallet.github.io/posts/2018/03/qiime2-plugin); [II](https://cduvallet.github.io/posts/2018/06/qiime2-plugin-conda)) on how to build a QIIME2 plugin.
