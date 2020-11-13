@@ -62,7 +62,7 @@ qiime srs SRScurve \
   --p-rarefy-color 'grey' \
   --p-sample 1103 \
   --p-max-sample-size 3500 \
-  --p-step 250 \
+  --p-step 1 \
   --o-visualization example_data/SRScurve-plot.qzv
 ```
 <!---INCLUDE OUTPUT--->
