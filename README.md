@@ -58,17 +58,23 @@ To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScur
 ```
 qiime srs SRScurve \
   --i-table example_data/table.qza \
+  --p-step 100 \
+  --p-max-sample-size 3500 \
   --p-rarefy-comparison \
   --p-rarefy-comparison-legend \
+  --p-rarefy-repeats 100 \
   --p-SRS-color 'blue' \
-  --p-rarefy-color 'grey' \
-  --p-sample 1103 \
-  --p-max-sample-size 3500 \
-  --p-step 1 \
+  --p-rarefy-color '#333333' \
   --o-visualization example_data/SRScurve-plot.qzv
 ```
+You can see the plot output by running:
+```
+qiime tools view example_data/SRScurve-plot.qzv
+```
 <!---INCLUDE OUTPUT--->
-In the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/) the samples were normalized by rarefying to 1103 reads. That is why we are comparing rarefying with SRS normalization at this specific sequencing depth by using `--p-rarefy-comparison` and `--p-sample 1103`. In particular, we see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying. Therefore, if 1103 reads was previously considered a good normalization cut-off for normalization by rarefying, when normalizing by SRS this cut-off will be even better! So, for simplicity, let's use 1103 as our C<sub>min</sub>.
+Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-comparison`. We see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying, so that the SRS curves level out way before the rarefy curves. For example, we see that for SRS-normalized samples, 3000 reads is a good choice of normalization cut-off, while this wouldn't be true for rarefy-normalized data. 
+
+Anyway, let's use 3000 as our C<sub>min</sub>.
 
 #### 2) Running SRS
 To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>min</sub>. Please run `qiime srs SRS --help` to see the full options.
@@ -77,9 +83,10 @@ To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>
 ```
 qiime srs SRS \
   --i-table example_data/table.qza \
-  --p-c-min 1103 \
+  --p-c-min 3000 \
   --o-normalized-table example_data/norm-table.qza
 ```
+After running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded. 
 Finally, we can confirm that all samples ended up with the same number of reads in the SRS-normalized artifact by running:
 ```
 qiime feature-table summarize \
