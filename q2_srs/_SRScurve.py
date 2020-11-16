@@ -28,29 +28,7 @@ def run_commands(cmds, verbose=True):
         #    print(" ".join(cmd), end='\n\n')
         subprocess.run(cmd, check=True)
 
-def SRS(table: biom.Table, c_min: int, set_seed: bool = True, seed: int = 1) -> biom.Table:
-    if table.is_empty():
-        raise ValueError("The provided table object is empty")
-    
-    #normalized_table = biom.Table()
-    
-    ## run the R script on the file
-    with tempfile.TemporaryDirectory() as temp_dir_name:
-
-        ## write the biom table to file
-        input_name = os.path.join(temp_dir_name, 'table.tsv')
-        with open(input_name, 'w') as fh:
-            fh.write(table.to_tsv())
-
-        cmd = ['SRS.R', input_name, str(c_min), str(set_seed), str(seed)]
-        run_commands([cmd])
-        norm_table_df = pd.read_csv(input_name, sep='\t')
         
-    norm_table_biom = biom.Table(data=norm_table_df.values,
-                                 observation_ids=norm_table_df.index,
-                                 sample_ids=norm_table_df.columns)
-    return norm_table_biom
-
 def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step: int = 50,
             sample: int = 0, max_sample_size: int = 0, rarefy_comparison: bool = False,
             rarefy_repeats: int = 10, rarefy_comparison_legend: bool = False, srs_color: str = 'black', 
