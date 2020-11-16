@@ -38,15 +38,15 @@ def SRScurve(#output_dir: str,
         raise ValueError("The provided table object is empty")
     
     ## run the R script on the file
-    with tempfile.TemporaryDirectory() as temp_dir_name:
+    #with tempfile.TemporaryDirectory() as temp_dir_name:
 
         ## write the biom table to file
-        input_name = os.path.join(temp_dir_name, 'table.tsv')
-        with open(input_name, 'w') as fh:
-            fh.write(table.to_tsv())
-        table_df = pd.read_csv(input_name, sep='\t')
+    input_name = os.path.join(temp_dir_name, 'table.tsv')
+    with open(input_name, 'w') as fh:
+        fh.write(table.to_tsv())
+    #table_df = pd.read_csv(input_name, sep='\t')
 
-    cmd = ['SRScurve.R', table_df, str(metric), str(step), str(sample),
+    cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
             str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
             str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
             str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
