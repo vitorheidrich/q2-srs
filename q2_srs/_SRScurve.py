@@ -52,8 +52,8 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
             str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
     run_commands([cmd])
         
-    plot = os.path.join(output_dir,'plot.png')
+    plot = os.path.join(output_dir,'SRScurve_plot.png')
     index = os.path.join(output_dir, 'index.html')
         
     with open(index, 'w') as fh:
-        fh.write('<!DOCTYPE html><head></head><body><img src="SRScurve_plot.png" style="max-width: 100vw;max-height: 100vh;object-fit: contain" /></body></html>')
+        fh.write('<!DOCTYPE html><head></head><body><img src=plot style="max-width: 100vw;max-height: 100vh;object-fit: contain" /></body></html>')
