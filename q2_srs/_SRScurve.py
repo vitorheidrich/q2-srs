@@ -40,7 +40,8 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
     #with tempfile.TemporaryDirectory() as temp_dir_name:
 
         ## write the biom table to file
-    input_name = os.path.join(temp_dir_name, 'table.tsv')
+    #input_name = os.path.join(temp_dir_name, 'table.tsv')
+    input_name = 'table.tsv'
     with open(input_name, 'w') as fh:
         fh.write(table.to_tsv())
     #table_df = pd.read_csv(input_name, sep='\t')
