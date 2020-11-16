@@ -40,7 +40,7 @@ data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.
 colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
 
 #plot SRScurves
-png(paste0(output_dir/"SRScurve_plot.png"), 640, 480)
+png(paste0(output_dir,"/SRScurve_plot.png"), 640, 480)
 SRScurve(data, metric = metric, step = step, sample = sample, max.sample.size = max.sample.size,
               rarefy.comparison = rarefy.comparison, rarefy.repeats = rarefy.repeats,
               rarefy.comparison.legend = rarefy.comparison.legend, col = c(SRS.color, rarefy.color),
