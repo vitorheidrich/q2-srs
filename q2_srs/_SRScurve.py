@@ -11,7 +11,7 @@ import qiime2.util
 import pandas as pd
 import q2templates
 
-# We used the q2-breakaway/q2_breakaway/_alphas.py as inspiration to learn how to make a R script be triggered by a python command. So thank you Amy Willis
+# We used the q2-breakaway/q2_breakaway/_alphas.py as inspiration to learn how to make a R script to be triggered by a python command. So thank you Amy Willis
 
 TEMPLATES = pkg_resources.resource_filename('q2_srs', 'assets')
 
@@ -50,7 +50,7 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
               str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
         run_commands([cmd])
         
-    #plot = os.path.join(output_dir,'plot.png')
+    plot = os.path.join(output_dir,'plot.png')
     index = os.path.join(output_dir, 'index.html')
         
     with open(index, 'w') as fh:
