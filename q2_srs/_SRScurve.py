@@ -56,4 +56,4 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
     index = os.path.join(output_dir, 'index.html')
         
     with open(index, 'w') as fh:
-        fh.write('<!DOCTYPE html><head></head><body><img src=plot style="max-width: 100vw;max-height: 100vh;object-fit: contain" /></body></html>')
+        fh.write('<!DOCTYPE html><head></head><body><img src="Rplots.pdf" style="max-width: 100vw;max-height: 100vh;object-fit: contain" /></body></html>')
