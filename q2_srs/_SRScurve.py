@@ -37,20 +37,20 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
         raise ValueError("The provided table object is empty")
     
     ## run the R script on the file
-    #with tempfile.TemporaryDirectory() as temp_dir_name:
+    with tempfile.TemporaryDirectory() as temp_dir_name:
 
         ## write the biom table to file
-    #input_name = os.path.join(temp_dir_name, 'table.tsv')
-    input_name = 'table.tsv'
-    with open(input_name, 'w') as fh:
-        fh.write(table.to_tsv())
+        input_name = os.path.join(temp_dir_name, 'table.tsv')
+    #input_name = 'table.tsv'
+        with open(input_name, 'w') as fh:
+            fh.write(table.to_tsv())
     #table_df = pd.read_csv(input_name, sep='\t')
 
-    cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
-            str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
-            str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
-            str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
-    run_commands([cmd])
+        cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
+               str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
+               str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
+               str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
+        run_commands([cmd])
         
     plot = os.path.join(output_dir,'plot.png')
     index = os.path.join(output_dir, 'index.html')
