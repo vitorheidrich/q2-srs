@@ -11,11 +11,15 @@ Activate your `qiime2` environment by running (or equivalent):
 ```
 conda activate qiime2-2020.8
 ```
-To install q2-srs plugin from conda, run:
+* Option 1: To install q2-srs plugin from conda, run:
 ```
 conda install -c vitorheidrich q2_srs
 ```
-To install manually, clone this repository to your computer, `cd` into the main directory, and run:
+* Option 2: To install manually, clone this repository to your computer
+```
+git repo https://github.com/vitorheidrich/q2-srs
+```
+`cd` into the main directory, and run:
 ```
 python setup.py install
 ```
