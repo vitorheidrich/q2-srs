@@ -44,8 +44,8 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
 
         cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
               str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
-              str(rarefy_comparison_legend), str(SRS_color), str(rarefy_color), 
-              str(SRS_linetype), str(rarefy_linetype), str(label), str(output_dir)]
+              str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
+              str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
         run_commands([cmd])
         
     #plot = os.path.join(output_dir,'plot.png')
