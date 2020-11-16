@@ -12,7 +12,7 @@ import q2templates
 
 # We used the q2-breakaway/q2_breakaway/_alphas.py as inspiration to learn how to make a R script be triggered by a python command. So thank you Amy Willis
 
-TEMPLATES = pkg_resources.resource_filename('q2_srs', 'assets')
+TEMPLATES = pkg_resources.resource_filename('q2_srs', 'assets/SRS.R')
 
 def run_commands(cmds, verbose=True):
     if verbose:
