@@ -5,8 +5,8 @@ from q2_types.feature_table import FeatureTable, Frequency
 
 import q2_srs
 
-from q2_srs._SRS import SRS
-from q2_srs._SRS import SRScurve
+#from q2_srs._SRS import SRS
+#from q2_srs._SRS import SRScurve
 
 cites = qiime2.plugin.Citations.load('citations.bib',
     package='q2_srs')
@@ -28,7 +28,7 @@ plugin = qiime2.plugin.Plugin(
 
 # Registering the SRS function
 plugin.methods.register_function(
-    function=SRS,
+    function=q2_srs.SRS,
     inputs={'table': FeatureTable[Frequency]},
     outputs=[('normalized_table', FeatureTable[Frequency])],
     parameters={'c_min': Int % Range(1, None),
@@ -58,7 +58,7 @@ plugin.methods.register_function(
 
 # Registering the SRScurve function
 plugin.visualizers.register_function(
-    function=SRScurve,
+    function=q2_srs.SRScurve,
     inputs={'table': FeatureTable[Frequency]},
     #outputs=[('normalized_table', FeatureTable[Frequency])],
     parameters={'metric': Str % Choices(['richness', 'shannon', 'simpson', 'invsimpson']),
