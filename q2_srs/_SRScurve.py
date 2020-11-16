@@ -29,7 +29,8 @@ def run_commands(cmds, verbose=True):
         subprocess.run(cmd, check=True)
 
         
-def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step: int = 50,
+def SRScurve(#output_dir: str, 
+    table: biom.Table, metric: str = 'richness', step: int = 50,
             sample: int = 0, max_sample_size: int = 0, rarefy_comparison: bool = False,
             rarefy_repeats: int = 10, rarefy_comparison_legend: bool = False, srs_color: str = 'black', 
             rarefy_color: str = 'red', srs_linetype: str = 'solid', rarefy_linetype: str = 'longdash', label: bool = False) -> None:
@@ -43,12 +44,13 @@ def SRScurve(output_dir: str, table: biom.Table, metric: str = 'richness', step:
         input_name = os.path.join(temp_dir_name, 'table.tsv')
         with open(input_name, 'w') as fh:
             fh.write(table.to_tsv())
+        table_df = pd.read_csv(input_name, sep='\t')
 
-        cmd = ['SRScurve.R', input_name, str(metric), str(step), str(sample),
-              str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
-              str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
-              str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
-        run_commands([cmd])
+    cmd = ['SRScurve.R', table_df, str(metric), str(step), str(sample),
+            str(max_sample_size), str(rarefy_comparison), str(rarefy_repeats),
+            str(rarefy_comparison_legend), str(srs_color), str(rarefy_color), 
+            str(srs_linetype), str(rarefy_linetype), str(label), str(output_dir)]
+    run_commands([cmd])
         
     plot = os.path.join(output_dir,'plot.png')
     index = os.path.join(output_dir, 'index.html')
