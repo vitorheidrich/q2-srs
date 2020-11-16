@@ -46,6 +46,7 @@ plot <- SRScurve(data, metric = metric, step = step, sample = sample, max.sample
               lty = c(SRS.linetype, rarefy.linetype), label = label)
 
 #save plot to file
+pdf(NULL)
 png(paste0(output_dir,"/SRScurve_plot.png"), width = 10, height = 10)
 plot
 dev.off()
