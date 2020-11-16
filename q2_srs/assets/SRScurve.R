@@ -1,5 +1,5 @@
 #! /usr/bin/Rscript
-#R  script to load SRS R package and run SRS function
+#R  script to load SRS R package and run SRScurve function
 
 cat(R.version$version.string, "\n")
 args <- commandArgs(TRUE)
