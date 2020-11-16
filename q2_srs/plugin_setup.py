@@ -68,9 +68,9 @@ plugin.visualizers.register_function(
                'rarefy_comparison': Bool,
                'rarefy_repeats': Int % Range(1, None),
                'rarefy_comparison_legend': Bool,
-               'SRS_color': Str,
+               'srs_color': Str,
                'rarefy_color': Str,
-               'SRS_linetype': Str,
+               'srs_linetype': Str,
                'rarefy_linetype': Str,
                'label': Bool},
     input_descriptions={
@@ -98,12 +98,12 @@ plugin.visualizers.register_function(
                            'is true'),
         'rarefy_comparison_legend': ('Show legend indicating SRS and rarefy derived curves. '
                                      'Only used if rarefy_comparison is true.'),
-        'SRS_color': ('Color to be used for SRS curves. Check R documentation '
+        'srs_color': ('Color to be used for SRS curves. Check R documentation '
                      'for options.'),
         'rarefy_color': ('Color to be used for rarefaction curves. Only used if '
                          'rarefy_comparison is true. Check R documentation for '
                          'options.'),
-        'SRS_linetype': ('Line type to be used for SRS curves. Check R documentation '
+        'srs_linetype': ('Line type to be used for SRS curves. Check R documentation '
                          'for options.'),
         'rarefy_linetype': ('Line type to be used for rarefaction curves. Only '
                             'used if rarefy_comparison is true. Check R documentation '
