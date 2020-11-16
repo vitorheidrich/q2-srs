@@ -13,6 +13,7 @@ setup(
     name="srs",
     version="2020.8.0",
     packages=find_packages(),
+    include_package_data=True,
     author="Vitor Heidrich, Lukas Beule, Devon O'rourke and Petr Karlovsky",
     description="Scaling with ranked subsampling (SRS) for the normalization of ecological count data",
     scripts=['q2_srs/assets/SRS.R'],
