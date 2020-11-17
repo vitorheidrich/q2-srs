@@ -18,7 +18,7 @@ conda install -c vitorheidrich q2_srs
 * Option 2: To install manually, clone this repository to your computer, `cd` into the main directory, and run the python installation:
 ```
 git repo https://github.com/vitorheidrich/q2-srs
-cd your_path/q2-srs
+cd q2-srs
 python setup.py install
 ```
 Check for a sucessful installation by running `qiime srs`. A description of the q2-srs plugin should show up.
