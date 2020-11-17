@@ -23,9 +23,9 @@ requirements:
 
   run:
     - python=3.6
-    - qiime2 >=2020.1
-    - q2-types
-    - biom-format
+    - qiime2 {{ release }}.*
+    - q2-types {{ release }}.*
+    - biom-format >=2.1.5,<2.2.0
     - pandas
 
 
