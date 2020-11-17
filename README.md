@@ -50,7 +50,7 @@ The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> r
 
 In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). This table is summarized below:
 
-<!---INCLUDE OUTPUT--->
+<center><img src = "https://github.com/vitorheidrich/q2-srs/example_data/table.png?raw=true"></center>
 #### 1) Running SRScurve
 To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScurve` is highly customizable, allowing different alpha diversity indices, a comparison with repeated rarefying and many other analytical/aesthetic options<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Please run `qiime srs SRScurve --help` to see the full options.
 
@@ -71,7 +71,8 @@ You can see the plot output by running:
 ```
 qiime tools view example_data/SRScurve-plot.qzv
 ```
-<!---INCLUDE OUTPUT--->
+<center><img src = "https://github.com/vitorheidrich/q2-srs/example_data/SRScurve-plot.png?raw=true"></center>
+
 Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-comparison`. We see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying, so that the SRS curves level out way before the rarefy curves. For example, we see that for SRS-normalized samples, 3000 reads is a good choice of normalization cut-off, while this wouldn't be true for rarefy-normalized data. 
 
 Anyway, let's use 3000 as our C<sub>min</sub>.
@@ -93,7 +94,7 @@ qiime feature-table summarize \
   --i-table example_data/norm-table.qza \
   --o-visualization example_data/norm-table.qzv
 ```
-<!---INCLUDE OUTPUT--->
+<center><img src = "https://github.com/vitorheidrich/q2-srs/example_data/norm-table.png?raw=true"></center>
 ##### Citation
 If you use this plugin in your research paper, please cite as:
 
