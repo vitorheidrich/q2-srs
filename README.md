@@ -27,7 +27,7 @@ Check for a sucessful installation by running `qiime srs`. A description of the 
 
 q2-srs features two `qiime` commands:
 * `qiime srs SRS` - performs SRS normalization at a user-defined number of reads per sample
-* `qiime srs SRScurve` - draws alpha diversity rarefaction curves for SRS-normalized data (instead of rarefied data) at varying sequencing depths
+* `qiime srs SRScurve` - draws alpha diversity rarefaction curves for SRS-normalized data (instead of rarefied data)
 
 To see the full options of each command run `qiime srs SRS --help` or `qiime srs SRScurve --help`.
 
@@ -35,7 +35,7 @@ We also encourage you to explore the [SRS Shiny app](https://vitorheidrich.shiny
 
 ### Usage recommendations
 
-In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). 
+In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). 
 
 Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Just upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
@@ -74,9 +74,9 @@ qiime tools view example_data/SRScurve-plot.qzv
 ```
 <center><img src = "https://github.com/vitorheidrich/q2-srs/blob/main/example_data/SRScurve-plot.png?raw=true"></center>
 
-Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-comparison`. We see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying, so that the SRS curves level out way before the rarefy curves. For example, we see that for SRS-normalized samples, 3000 reads is a good choice of normalization cut-off, while this wouldn't be true for rarefy-normalized data. 
+Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-comparison`. We see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying, so that the SRS curves level out way before the rarefy curves. For example, we see that for SRS-normalized data, 3000 reads would be a good normalization cut-off, while this wouldn't be true for rarefying-normalized data. 
 
-Anyway, let's use 3000 as our C<sub>min</sub>.
+Anyway, let's use 3000 as C<sub>min</sub>.
 
 #### 2) Running SRS
 To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>min</sub>. Please run `qiime srs SRS --help` to see the full options.
@@ -88,7 +88,8 @@ qiime srs SRS \
   --p-c-min 3000 \
   --o-normalized-table example_data/norm-table.qza
 ```
-After running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded. 
+**Be aware**: after running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded. 
+
 Finally, we can confirm that all samples ended up with the same number of reads in the SRS-normalized artifact by running:
 ```
 qiime feature-table summarize \
