@@ -23,8 +23,8 @@ requirements:
 
   run:
     - python=3.6
-    - qiime2 {{ release }}.*
-    - q2-types {{ release }}.*
+    - qiime2>=2020.8
+    - q2-types>=2020.8
     - biom-format >=2.1.5,<2.2.0
     - pandas
 
