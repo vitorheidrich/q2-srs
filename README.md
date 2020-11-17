@@ -11,7 +11,7 @@ Activate your `qiime2` environment by running (or equivalent):
 ```
 conda activate qiime2-2020.8
 ```
-* Option 1 - To install from conda:
+* Option 1 - To install from conda, run:
 ```
 conda install -c vitorheidrich q2_srs
 ```
