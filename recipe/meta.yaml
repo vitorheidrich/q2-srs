@@ -22,14 +22,10 @@ requirements:
 
   run:
     - python=3.6
-    # QIIME 2 things for the setup
     - qiime2 >=2019.1
     - q2-types
-    # Other modules used in the actual code
     - biom-format
     - pandas
-    - numpy
-    - scipy
 
 about:
   home: https://github.com/vitorheidrich/q2-srs
