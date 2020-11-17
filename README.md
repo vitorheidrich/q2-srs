@@ -7,7 +7,7 @@ Read more about the normalization method in the SRS [paper](https://doi.org/10.7
 
 ## Installing
 
-Activate your `qiime2` environment by running (or equivalent):
+Activate your `qiime2>=2020.8` environment by running (or equivalent):
 ```
 conda activate qiime2-2020.8
 ```
