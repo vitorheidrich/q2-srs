@@ -20,7 +20,7 @@ requirements:
 
   run:
     - python=3.6
-    - qiime2 >=2019.1
+    - qiime2 >=2020.8
     - q2-types
     - biom-format
     - pandas
