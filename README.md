@@ -31,13 +31,13 @@ q2-srs features two `qiime` commands:
 
 To see the full options of each command run `qiime srs SRS --help` or `qiime srs SRScurve --help`.
 
-We also encourage you to explore the [SRS Shiny app](), that is specifically designed for q2-srs users.
+We also encourage you to explore the [SRS Shiny app](https://vitorheidrich.shinyapps.io/srsshinyapp/), that is specifically designed for q2-srs users.
 
 ### Usage recommendations
 
 In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the SRS [paper](https://doi.org/10.7717/peerj.9593) for details). 
 
-Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>]()<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Just upload your ASV/OTU table (.qza) and the app will provide:
+Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Just upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
 * A simpler SRScurve plot (use the q2-srs SRScurve for the full experience)
 * Summary statistics on trade-offs between C<sub>min</sub> and the number of retained samples
