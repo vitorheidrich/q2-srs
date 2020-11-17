@@ -11,12 +11,11 @@ Activate your `qiime2` environment by running (or equivalent):
 ```
 conda activate qiime2-2020.8
 ```
-Install the SRS R package:
+* Option 1 - To install from conda:
 ```
-R -e 'install.packages("SRS")'
-qiime dev refresh-cache
+conda install -c vitorheidrich q2_srs
 ```
-Clone this repository to your computer, `cd` into the main directory, and run the python installation:
+* Option 2 - To install manually, clone this repository to your computer, `cd` into the main directory, and run the python installation:
 ```
 git clone https://github.com/vitorheidrich/q2-srs
 cd q2-srs
