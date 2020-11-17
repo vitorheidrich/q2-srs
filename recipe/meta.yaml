@@ -4,11 +4,9 @@ package:
 source:
   path: ../
 
-# make noarch, architecture-independent
 build:
     noarch: generic
 
-# Add bioconda channel for biom
 extra:
   channels:
     - conda-forge
