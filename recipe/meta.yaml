@@ -1,0 +1,35 @@
+package:
+  name: q2_srs
+  version: 2020.8.0
+
+source:
+  path: ../
+
+# make noarch, architecture-independent
+build:
+    noarch: generic
+
+# Add bioconda channel for biom
+extra:
+  channels:
+    - conda-forge
+    - bioconda
+
+requirements:
+
+  build:
+    - python=3.6
+    - setuptools
+
+  run:
+    - python=3.6
+    - qiime2 >=2020.8
+    - q2-types
+    - biom-format
+    - pandas
+
+
+about:
+  home: https://github.com/vitorheidrich/q2-srs
+  license: BSD-3-Clause
+  license_family: BSD
