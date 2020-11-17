@@ -7,7 +7,7 @@ source:
 
 # make noarch, architecture-independent
 build:
-    noarch: generic
+  script: make install
 
 # Add bioconda channel for biom
 extra:
