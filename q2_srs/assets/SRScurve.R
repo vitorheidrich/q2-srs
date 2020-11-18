@@ -33,9 +33,12 @@ errQuit <- function(mesg, status=1) {
 }
 
 #Check SRS installations and install SRS if needed
-if ("SRS" %in% installed.packages()[,"Package"] & packageVersion("SRS")>="0.2.1") { 
+if ("SRS" %in% installed.packages()[,"Package"]) {
+  if(packageVersion("SRS")>="0.2.1"){
     cat("SRS package already installed! \n\n")
 } else {
+    install.packages("SRS")
+}} else {
     install.packages("SRS")
 }
 
