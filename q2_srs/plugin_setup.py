@@ -108,7 +108,7 @@ plugin.visualizers.register_function(
         'rarefy_linetype': ('Line type to be used for rarefaction curves. Only '
                             'used if rarefy_comparison is true. Check R documentation '
                             'for options.'),
-        'label': ('Include sample id labels. Only works when max_sample_size is 0.')
+        'label': ('Include sample id labels.')
     },
     name='Scaling with ranked subsampling curve',
     description=('For each sample, draws a line plot of alpha diversity '
