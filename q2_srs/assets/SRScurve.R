@@ -18,11 +18,12 @@ SRS.linetype <- as.character(args[[11]])
 rarefy.linetype <- as.character(args[[12]])
 if(rarefy.comparison==T){
   color <- c(SRS.color,rarefy.color)
-  linetype <- c(SRS.linetype,rarefy.linetype)}
-else{
+  linetype <- c(SRS.linetype,rarefy.linetype)
+} else{
   color <- SRS.color
   linetype <- SRS.linetype
-  rarefy.comparison.legend <- F}
+  rarefy.comparison.legend <- F
+}
 label <- as.logical(args[[13]])
 output_dir <- as.character(args[[14]])
 
