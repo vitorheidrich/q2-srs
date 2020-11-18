@@ -16,6 +16,13 @@ SRS.color <- as.character(args[[9]])
 rarefy.color <- as.character(args[[10]])
 SRS.linetype <- as.character(args[[11]])
 rarefy.linetype <- as.character(args[[12]])
+if(rarefy.comparison==T){
+  color <- c(SRS.color,rarefy.color)
+  linetype <- c(SRS.linetype,rarefy.linetype)}
+else{
+  color <- SRS.color
+  linetype <- SRS.linetype
+  rarefy.comparison.legend <- F}
 label <- as.logical(args[[13]])
 output_dir <- as.character(args[[14]])
 
@@ -43,8 +50,8 @@ colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t"
 png(paste0(output_dir,"/SRScurve_plot.png"), 800, 600)
 SRScurve(data, metric = metric, step = step, sample = sample, max.sample.size = max.sample.size,
               rarefy.comparison = rarefy.comparison, rarefy.repeats = rarefy.repeats,
-              rarefy.comparison.legend = rarefy.comparison.legend, col = c(SRS.color, rarefy.color),
-              lty = c(SRS.linetype, rarefy.linetype), label = label)
+              rarefy.comparison.legend = rarefy.comparison.legend, col = color,
+              lty = linetype, label = label)
 dev.off()
 
 q(status=0)
