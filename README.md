@@ -88,7 +88,7 @@ qiime srs SRS \
   --p-c-min 3000 \
   --o-normalized-table example_data/norm-table.qza
 ```
-**Be aware**: after running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded. 
+**Be aware**: after running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded (use `--verbose` to see the list of discarded samples). 
 
 Finally, we can confirm that all samples ended up with the same number of reads in the SRS-normalized artifact by running:
 ```
