@@ -74,9 +74,11 @@ qiime tools view example_data/SRScurve-plot.qzv
 ```
 <center><img src = "https://github.com/vitorheidrich/q2-srs/blob/main/example_data/SRScurve-plot.png?raw=true"></center>
 
-Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-comparison`. We see that, in this example, SRS normalization consistently retains a higher level of diversity in comparison with rarefying, so that the SRS curves level out way before the rarefy curves. For example, we see that for SRS-normalized data, 3000 reads would be a good normalization cut-off, while this wouldn't be true for rarefying-normalized data. 
+Depending on the data properties (balance between rare and abundant OTUs/ASVs), you may observe a minor zigzag behaviour of SRS curves. This is due to the picking of the ranked fractional values (C<sub>frag</sub>): depending on the scaling factor, an OTU/ASV with an integer value (C<sub>int</sub>) of zero may/may not be picked by ranked subsampling due to its C<sub>frag</sub> (see the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). This is causing the reproducible zigzag behaviour in the observed number of ASVs (richness) in this example.
 
-Anyway, let's use 3000 as C<sub>min</sub>.
+Notice we are comparing SRS normalization with repeated rarefying by using `--p-rarefy-comparison`.
+
+Based on the `SRScurve` output, a C<sub>min</sub> of 3000 will be used below.
 
 #### 2) Running SRS
 To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>min</sub>. Run `qiime srs SRS --help` to see the full options.
