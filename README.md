@@ -37,7 +37,7 @@ We strongly encourage you to explore the [SRS Shiny app](https://vitorheidrich.s
 
 In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (see the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). 
 
-Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (see the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Upload your ASV/OTU table (.qza) and the app will provide:
+Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (see the SRS practical guide [paper](https://doi.org/xxx) for details)-->. Upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
 * A simpler SRScurve plot (use the q2-srs SRScurve for the full experience)
 * Summary statistics on trade-offs between C<sub>min</sub> and the number of retained samples
@@ -53,7 +53,7 @@ In the following examples we are going to use the ASV table (DADA2 output) from 
 <center><img src = "https://github.com/vitorheidrich/q2-srs/blob/main/example_data/table.png?raw=true"></center>
 
 #### 1) Running SRScurve
-To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScurve` is highly customizable, allowing different alpha diversity indices, a comparison with repeated rarefying and many other analytical/aesthetic options<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Please run `qiime srs SRScurve --help` to see the full options.
+To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScurve` is highly customizable, allowing different alpha diversity indices, a comparison with repeated rarefying and many other analytical/aesthetic options<!-- (see the SRS practical guide [paper](https://doi.org/xxx) for details)-->. Please run `qiime srs SRScurve --help` to see the full options.
 
 `SRScurve` usage example with the `table.qza` from the `example_data` folder (see `table.qzv` for details):
 ```
