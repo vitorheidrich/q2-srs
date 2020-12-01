@@ -88,7 +88,8 @@ To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>
 qiime srs SRS \
   --i-table example_data/table.qza \
   --p-c-min 3000 \
-  --o-normalized-table example_data/norm-table.qza
+  --o-normalized-table example_data/norm-table.qza \
+  --verbose
 ```
 **Be aware**: after running `SRS`, the samples with less sequence counts than the chosen C<sub>min</sub> will have been discarded (use `--verbose` to see the list of discarded samples). 
 
