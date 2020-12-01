@@ -1,6 +1,6 @@
 # q2-srs
 
-QIIME2 plugin for microbiome count data normalization by scaling with ranked subsampling (SRS).
+QIIME 2 plugin for microbiome count data normalization by scaling with ranked subsampling (SRS).
 
 Read more about this normalization method in the [SRS paper](https://doi.org/10.7717/peerj.9593) (Beule and Karlovsky, PeerJ 2020).
 <!---To more details on the usage of SRS, take a look at the practical guide [paper]() ().--->
@@ -21,7 +21,7 @@ git clone https://github.com/vitorheidrich/q2-srs
 cd q2-srs
 python setup.py install
 ```
-Check for a sucessful installation by running `qiime srs`. A description of the q2-srs plugin should show up.
+Check for successful installation by running `qiime srs`. A description of the q2-srs plugin will show up.
 
 ## Using
 
@@ -31,13 +31,13 @@ q2-srs features two `qiime` commands:
 
 To see the full options of each command run `qiime srs SRS --help` or `qiime srs SRScurve --help`.
 
-We also encourage you to explore the [SRS Shiny app](https://vitorheidrich.shinyapps.io/srsshinyapp/), that is specifically designed for q2-srs users.
+We strongly encourage you to explore the [SRS Shiny app](https://vitorheidrich.shinyapps.io/srsshinyapp/), that is specifically designed for q2-srs users.
 
 ### Usage recommendations
 
-In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (check the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). 
+In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (see the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). 
 
-Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Just upload your ASV/OTU table (.qza) and the app will provide:
+Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (see the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
 * A simpler SRScurve plot (use the q2-srs SRScurve for the full experience)
 * Summary statistics on trade-offs between C<sub>min</sub> and the number of retained samples
@@ -48,14 +48,14 @@ The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> r
 
 ### Usage examples
 
-In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). This table is summarized below:
+In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). The table is summarized below:
 
 <center><img src = "https://github.com/vitorheidrich/q2-srs/blob/main/example_data/table.png?raw=true"></center>
 
 #### 1) Running SRScurve
 To run `SRScurve` the only required input is the OTU/ASV table. However, `SRScurve` is highly customizable, allowing different alpha diversity indices, a comparison with repeated rarefying and many other analytical/aesthetic options<!-- (check the SRS practical guide [paper](https://doi.org/10.7717/peerj.9593) for details)-->. Please run `qiime srs SRScurve --help` to see the full options.
 
-`SRScurve` usage example with the `table.qza` from the `example_data` folder (check `table.qzv` for details):
+`SRScurve` usage example with the `table.qza` from the `example_data` folder (see `table.qzv` for details):
 ```
 qiime srs SRScurve \
   --i-table example_data/table.qza \
@@ -79,7 +79,7 @@ Notice we are comparing rarefying with SRS normalization by using `--p-rarefy-co
 Anyway, let's use 3000 as C<sub>min</sub>.
 
 #### 2) Running SRS
-To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>min</sub>. Please run `qiime srs SRS --help` to see the full options.
+To run `SRS` the only required input are the OTU/ASV table and the chosen C<sub>min</sub>. Run `qiime srs SRS --help` to see the full options.
 
 `SRS` usage example with the `table.qza` from the `example_data` folder and the C<sub>min</sub> as determined above:
 ```
@@ -105,4 +105,4 @@ Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecol
 <!---Change the proposed cite to the practical guide later--->
 
 ##### Acknowledgement
-We would like to thank Claire Duvallet (@cduvallet) for her great tutorials ([I](https://cduvallet.github.io/posts/2018/03/qiime2-plugin); [II](https://cduvallet.github.io/posts/2018/06/qiime2-plugin-conda)) on how to build a QIIME2 plugin.
+We would like to thank Claire Duvallet (@cduvallet) for her great tutorials ([I](https://cduvallet.github.io/posts/2018/03/qiime2-plugin); [II](https://cduvallet.github.io/posts/2018/06/qiime2-plugin-conda)) on how to build a QIIME 2 plugin.
