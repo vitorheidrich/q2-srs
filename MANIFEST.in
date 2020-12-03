@@ -1,0 +1,3 @@
+graft q2_srs/assets
+include q2_srs/citations.bib
+include README.md
