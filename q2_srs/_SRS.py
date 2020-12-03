@@ -42,7 +42,7 @@ def SRS(table: biom.Table, c_min: int, set_seed: bool = True, seed: int = 1) -> 
             fh.write(table.to_tsv())
 
         cmd = ['SRS.R', input_name, str(c_min), str(set_seed), str(seed)]
-        run_commands([cmd])
+        run_commands(cmd)
         norm_table_df = pd.read_csv(input_name, sep='\t')
         
     norm_table_biom = biom.Table(data=norm_table_df.values,
