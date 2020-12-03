@@ -1,4 +1,4 @@
-#! /usr/bin/Rscript
+#!/usr/bin/env Rscript
 #R  script to load SRS R package and run SRScurve function
 
 cat(R.version$version.string, "\n")
