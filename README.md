@@ -4,7 +4,7 @@ QIIME 2 plugin for microbiome count data normalization by scaling with ranked su
 
 Read more about this normalization method in the [SRS paper](https://doi.org/10.7717/peerj.9593) (Beule and Karlovsky, PeerJ 2020).
 <!---To more details on the usage of SRS, take a look at the practical guide [paper]() ().--->
-
+![downloads](https://anaconda.org/vitorheidrich/q2_srs/badges/downloads.svg)
 ## Installing
 
 Activate your `qiime2>=2020.8` environment by running (or equivalent):
