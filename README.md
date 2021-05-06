@@ -63,7 +63,7 @@ qiime srs SRScurve \
   --p-rarefy-comparison \
   --p-rarefy-comparison-legend \
   --p-rarefy-repeats 100 \
-  --p-SRS-color 'blue' \
+  --p-srs-color 'blue' \
   --p-rarefy-color '#333333' \
   --o-visualization example_data/SRScurve-plot.qzv
 ```
