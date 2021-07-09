@@ -2,9 +2,10 @@
 
 QIIME 2 plugin for microbiome count data normalization by scaling with ranked subsampling (SRS).
 
+![Downloads](https://anaconda.org/vitorheidrich/q2_srs/badges/downloads.svg)
+
 Read more about this normalization method in the [SRS paper](https://doi.org/10.7717/peerj.9593) (Beule and Karlovsky, PeerJ 2020).
 <!---To more details on the usage of SRS, take a look at the practical guide [paper]() ().--->
-![Downloads](https://anaconda.org/vitorheidrich/q2_srs/badges/downloads.svg)
 
 ## Installing
 
