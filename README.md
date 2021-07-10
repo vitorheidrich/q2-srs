@@ -9,9 +9,9 @@ Read more about this normalization method in the [SRS paper](https://doi.org/10.
 
 ## Installing
 
-Activate your `qiime2>=2020.8` environment by running (or equivalent):
+Activate your `qiime2>=2021.4` environment by running (or equivalent):
 ```
-conda activate qiime2-2020.8
+conda activate qiime2-2021.4
 ```
 * Option 1 - To install from conda, run:
 ```
