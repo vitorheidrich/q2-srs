@@ -1,6 +1,6 @@
 package:
   name: q2_srs
-  version: 2020.8.0
+  version: 2021.4.0
 source:
   path: ../
 
@@ -15,12 +15,12 @@ extra:
 requirements:
 
   build:
-    - python=3.6
+    - python=3.8
     - setuptools
 
   run:
-    - python=3.6
-    - qiime2 >=2020.8
+    - python=3.8
+    - qiime2 >=2021.4
     - q2-types
     - biom-format
     - pandas
