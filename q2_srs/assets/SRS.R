@@ -28,13 +28,13 @@ library(SRS)
 cat("SRS R package version:", as.character(packageVersion("SRS")), "\n")
 
 #read raw data
-data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.names = FALSE)[,-1]
+data <- read.table(file = filename, skip = 0, header = F,row.names = NULL,check.names = FALSE,sep = "\t")[,-1]
 #include sample names
 colnames(data) <- colnames(read.csv(file = filename, nrows=1, skip=1, sep = "\t", check.names = FALSE))[-1]
 #normalize at c_min
 norm_data<-SRS(data, c_min, set_seed = set_seed, seed = seed)
 #include features names
-rownames(norm_data) <- read.table(file = filename, skip = 0, header = F, check.names = FALSE)[,1]
+rownames(norm_data) <- read.table(file = filename, skip = 0, header = F, check.names = FALSE, sep = "\t")[,1]
 
 write.table(norm_data, filename, sep = "\t", row.names = T, quote = F)
 
