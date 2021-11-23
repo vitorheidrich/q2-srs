@@ -47,6 +47,8 @@ Alternatively (and complementarily) to `SRScurve`, we strongly advise for the us
 Once you have chosen an adequate C<sub>min</sub>, run `SRS` with the C<sub>min</sub> that suits your data. 
 The output of `SRS` will be an OTU/ASV table SRS-normalized at C<sub>min</sub> reads per sample that is ready for the next steps of your pipeline.
 
+**Be aware**: the first time you run any q2-srs command will take a little longer than usual. This is due to the installation of necessary R dependencies. Use the `--verbose` flag (as in the following examples) to keep up with the installation process. After this first usage, q2-srs will run much faster.
+
 ### Usage examples
 
 In the following examples we are going to use the ASV table (DADA2 output) from the Moving Pictures [tutorial](https://docs.qiime2.org/2020.8/tutorials/moving-pictures/). The table is summarized below:
@@ -67,7 +69,8 @@ qiime srs SRScurve \
   --p-rarefy-repeats 100 \
   --p-srs-color 'blue' \
   --p-rarefy-color '#333333' \
-  --o-visualization example_data/SRScurve-plot.qzv
+  --o-visualization example_data/SRScurve-plot.qzv \
+  --verbose
 ```
 You can see the plot output by running:
 ```
