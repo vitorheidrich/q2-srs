@@ -6,7 +6,8 @@ QIIME 2 plugin for microbiome count data normalization by scaling with ranked su
 ![Downloads](https://anaconda.org/vitorheidrich/q2_srs/badges/downloads.svg)
 
 Read more about this normalization method in the [SRS paper](https://doi.org/10.7717/peerj.9593) (Beule and Karlovsky, PeerJ 2020).
-<!---To more details on the usage of SRS, take a look at the practical guide [paper]() ().--->
+
+To more details on the usage of SRS, take a look at our [software paper](https://doi.org/10.3390/app112311473) (Heidrich et al., Appl. Sci. 2021).
 
 ## Installing
 
@@ -38,7 +39,9 @@ We strongly encourage you to explore the [SRS Shiny app](https://vitorheidrich.s
 
 In order to normalize your samples to the same number of reads using SRS, we recommend running `SRScurve` first so you can determine a good normalization cut-off for your data. This normalization cut-off is called C<sub>min</sub> (see the [SRS paper](https://doi.org/10.7717/peerj.9593) for details). 
 
-Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/)<!-- (see the SRS practical guide [paper](https://doi.org/xxx) for details)-->. Upload your ASV/OTU table (.qza) and the app will provide:
+Alternatively (and complementarily) to `SRScurve`, we strongly advise for the use of the [SRS Shiny app for the determination of C<sub>min</sub>](https://vitorheidrich.shinyapps.io/srsshinyapp/) (see the SRS [software paper](https://doi.org/10.3390/app112311473) for details). 
+
+Upload your ASV/OTU table (.qza) and the app will provide:
 * A rug plot of the read counts per sample
 * A simpler SRScurve plot (use the q2-srs SRScurve for the full experience)
 * Summary statistics on trade-offs between C<sub>min</sub> and the number of retained samples
@@ -108,8 +111,11 @@ qiime feature-table summarize \
 ##### Citation
 If you use this plugin in your research paper, please cite as:
 
-Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. [*PeerJ* 8:e9593](https://doi.org/10.7717/peerj.9593)
-<!---Change the proposed cite to the practical guide later--->
+Heidrich V, Karlovsky P, Beule L. 2021. ‘SRS’ R package and ‘q2-srs’ QIIME 2 plugin: Normalization of Microbiome Data Using Scaling with Ranked Subsampling (SRS). [*Appl. Sci.* 11(23), 11473](https://doi.org/10.3390/app112311473).
+
+When referencing the SRS algorithm itself, please cite:
+
+Beule L, Karlovsky P. 2020. Improved normalization of species count data in ecology by scaling with ranked subsampling (SRS): application to microbial communities. [*PeerJ* 8:e9593](https://doi.org/10.7717/peerj.9593).
 
 ##### Acknowledgement
 We would like to thank Claire Duvallet (@cduvallet) for her great tutorials ([I](https://cduvallet.github.io/posts/2018/03/qiime2-plugin); [II](https://cduvallet.github.io/posts/2018/06/qiime2-plugin-conda)) on how to build a QIIME 2 plugin.
