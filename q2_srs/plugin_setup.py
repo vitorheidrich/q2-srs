@@ -53,7 +53,7 @@ plugin.methods.register_function(
     name='Scaling with ranked subsampling normalization',
     description=('Performs scaling with ranked subsampling (SRS) for '
                  'the normalization of ecological/microbiome count data.'),
-    citations=[cites['SRS2020beule']],
+    citations=[cites['app112311473']],
 )
 
 # Registering the SRScurve function
@@ -118,6 +118,6 @@ plugin.visualizers.register_function(
                  'sample. The function further allows to visualize trade-offs '
                  'between cutoff-level and alpha diversity and enables direct '
                  'comparison of SRS and repeated rarefying.'),
-    citations=[cites['SRS2020beule']],
+    citations=[cites['app112311473']],
 )
 
